@@ -15,6 +15,11 @@ public class Home extends AppCompatActivity implements Operations, View.OnClickL
     }
 
     @Override
+    public void onClick(View view) {
+
+    }
+
+    @Override
     public double addition(double a, double b) {
         return a + b;
     }
@@ -32,10 +37,5 @@ public class Home extends AppCompatActivity implements Operations, View.OnClickL
     @Override
     public double division(double a, double b) {
         return a / b;
-    }
-
-    @Override
-    public void onClick(View view) {
-
     }
 }
