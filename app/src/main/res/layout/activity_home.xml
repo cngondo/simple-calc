@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Simple Calc"
-        android:id="@+id/textView"
+        android:id="@+id/titleApp"
         android:textSize="40dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -25,8 +25,8 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="First Number"
-        android:id="@+id/textView2"
-        android:layout_below="@+id/textView"
+        android:id="@+id/fnumber"
+        android:layout_below="@+id/titleApp"
         android:layout_alignParentStart="true"
         android:layout_marginTop="53dp" />
 
@@ -35,8 +35,8 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Second Number"
-        android:id="@+id/textView3"
-        android:layout_below="@+id/textView2"
+        android:id="@+id/lnumber"
+        android:layout_below="@+id/fnumber"
         android:layout_alignParentStart="true"
         android:layout_marginTop="39dp" />
 
@@ -46,9 +46,9 @@
         android:inputType="number"
         android:ems="10"
         android:id="@+id/firstNumber"
-        android:layout_above="@+id/textView3"
+        android:layout_above="@+id/lnumber"
         android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/textView3" />
+        android:layout_toEndOf="@+id/lnumber" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -56,7 +56,7 @@
         android:inputType="number"
         android:ems="10"
         android:id="@+id/secondNumber"
-        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignBottom="@+id/lnumber"
         android:layout_alignParentEnd="true"
         android:layout_alignStart="@+id/firstNumber" />
 
@@ -65,7 +65,7 @@
         android:layout_height="wrap_content"
         android:text="+"
         android:id="@+id/buttonAdd"
-        android:layout_below="@+id/textView3"
+        android:layout_below="@+id/lnumber"
         android:layout_alignParentStart="true"
         android:layout_marginTop="50dp" />
 
@@ -93,14 +93,13 @@
         android:layout_below="@+id/buttonMultiply"
         android:layout_alignParentStart="true" />
 
-    <TextView
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Answer"
+        android:id="@+id/answer"
+        android:hint="answer"
         android:textSize="30dp"
-        android:id="@+id/textView4"
-        android:layout_above="@+id/buttonDivide"
-        android:layout_toEndOf="@+id/textView3" />
+        android:layout_below="@+id/buttonSubtract"
+        android:layout_toEndOf="@+id/lnumber" />
 
 </RelativeLayout>
