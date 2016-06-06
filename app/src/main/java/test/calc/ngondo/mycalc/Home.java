@@ -11,6 +11,14 @@ import calc.operations.Operations;
 
 public class Home extends AppCompatActivity implements Operations, View.OnClickListener {
 
+    double num1;
+    double num2;
+    double result;
+
+    TextView mAnswer;
+    EditText mSecondNumber;
+    EditText mFirstNumber;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,40 +27,79 @@ public class Home extends AppCompatActivity implements Operations, View.OnClickL
         final TextView lblTitle = (TextView) findViewById(R.id.titleApp);
         final TextView lblFirstNumber = (TextView) findViewById(R.id.fnumber);
         final TextView lblSecondNumber= (TextView) findViewById(R.id.lnumber);
+        mAnswer = (TextView) findViewById(R.id.answer);
 
-        final EditText mFirstNumber = (EditText) findViewById(R.id.firstNumber);
-        final EditText mSecondNumber = (EditText) findViewById(R.id.secondNumber);
-        final EditText manswer = (EditText) findViewById(R.id.answer);
+        mFirstNumber = (EditText) findViewById(R.id.firstNumber);
+        mSecondNumber = (EditText) findViewById(R.id.secondNumber);
 
         Button btnAdd = (Button) findViewById(R.id.buttonAdd);
         Button btnSubtract = (Button) findViewById(R.id.buttonSubtract);
         Button btnDivide = (Button) findViewById(R.id.buttonDivide);
         Button btnMultiply = (Button) findViewById(R.id.buttonMultiply);
 
+        btnAdd.setOnClickListener(this);
+        btnSubtract.setOnClickListener(this);
+        btnDivide.setOnClickListener(this);
+        btnMultiply.setOnClickListener(this);
+
+
     }
 
     @Override
     public void onClick(View view) {
+        try {
+            num1 = Double.parseDouble(mFirstNumber.getText().toString().replace(",",""));
+            num2 = Double.parseDouble(mSecondNumber.getText().toString().replace(",",""));
 
+        }catch (NumberFormatException e){
+            num1 = 0;
+            num2 = 0;
+        }
+
+        switch (view.getId()){
+            case R.id.buttonAdd:
+                addition(num1, num2);
+                break;
+            case R.id.buttonSubtract:
+                subtraction(num1, num2);
+                break;
+            case R.id.buttonMultiply:
+                multiplication(num1, num2);
+                break;
+            case R.id.buttonDivide:
+                division(num1, num2);
+                break;
+            default:
+                break;
+        }
+        mAnswer.setText(Double.toString(result));
     }
 
     @Override
     public double addition(double a, double b) {
-        return a + b;
+        a = num1; b = num2;
+        result = a + b;
+        return result;
     }
 
     @Override
     public double subtraction(double a, double b) {
-        return a - b;
+        a = num1; b = num2;
+        result = a - b;
+        return result;
     }
 
     @Override
     public double multiplication(double a, double b) {
-        return a * b;
+        a = num1; b = num2;
+        result = a * b;
+        return result;
     }
 
     @Override
     public double division(double a, double b) {
-        return a / b;
+        a = num1; b = num2;
+        result = a / b;
+        return result;
     }
 }
