@@ -14,5 +14,20 @@ public class HomeTest {
         assertEquals(19, new Home().addition(15,4), 0);
     }
 
+    @Test
+    public void subtraction() throws  Exception{
+        assertEquals(2, new Home().subtraction(6 ,4), 0);
+    }
+
+    @Test
+    public void multiplication() throws Exception{
+        assertEquals(40, new Home().multiplication(10, 4), 0);
+    }
+
+    @Test
+    public void division() throws Exception{
+        assertEquals(2, new Home().division(6, 3), 0);
+    }
+
 
 }

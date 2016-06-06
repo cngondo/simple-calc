@@ -24,11 +24,7 @@ public class Home extends AppCompatActivity implements Operations, View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         //all view elements here
-        final TextView lblTitle = (TextView) findViewById(R.id.titleApp);
-        final TextView lblFirstNumber = (TextView) findViewById(R.id.fnumber);
-        final TextView lblSecondNumber= (TextView) findViewById(R.id.lnumber);
         mAnswer = (TextView) findViewById(R.id.answer);
-
         mFirstNumber = (EditText) findViewById(R.id.firstNumber);
         mSecondNumber = (EditText) findViewById(R.id.secondNumber);
 
@@ -41,8 +37,6 @@ public class Home extends AppCompatActivity implements Operations, View.OnClickL
         btnSubtract.setOnClickListener(this);
         btnDivide.setOnClickListener(this);
         btnMultiply.setOnClickListener(this);
-
-
     }
 
     @Override
@@ -77,28 +71,24 @@ public class Home extends AppCompatActivity implements Operations, View.OnClickL
 
     @Override
     public double addition(double a, double b) {
-        a = num1; b = num2;
         result = a + b;
         return result;
     }
 
     @Override
     public double subtraction(double a, double b) {
-        a = num1; b = num2;
         result = a - b;
         return result;
     }
 
     @Override
     public double multiplication(double a, double b) {
-        a = num1; b = num2;
         result = a * b;
         return result;
     }
 
     @Override
     public double division(double a, double b) {
-        a = num1; b = num2;
         result = a / b;
         return result;
     }
